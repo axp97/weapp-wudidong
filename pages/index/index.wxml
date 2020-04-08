@@ -14,15 +14,33 @@
   <template wx:else is="pageEmpty" />
   <view class="dataList">
     <view wx:for="{{dataList}}" wx:for-index="dataIdx" wx:key="{{index}}">
-      <view class="userProfile">
-        <image class="avatar" type="userAvatarUrl" />
-        <!-- <open-data class="avatar" type="userAvatarUrl"></open-data> -->
-        <text>{{item.name}}</text>
+      <view class="top">
+        <view class="user">
+          <image class="userAvatar" type="userAvatarUrl" />
+          <!-- <open-data class="avatar" type="userAvatarUrl"></open-data> -->
+          <view class="userInfo">
+            <text>{{item.name}}</text>
+            <text>{{item.release}}</text>
+          </view>
+        </view>
+        <view class="more">more</view>
       </view>
-      <text>{{item.content}}</text>
-      <view>type
-        评论
-        赞</view>
+      <view class="content">
+        <text>{{item.content}}</text>
+      </view>
+      <view class="bottom">
+        <a>type</a>
+        <view>
+          <a>
+            <icon class="iconfont iconmessage"></icon>
+            {{item.reply_num}}
+          </a>
+          <a>
+            <icon class="iconfont iconawesome"></icon>
+            {{item.like_num}}
+          </a>
+        </view>
+      </view>
       <!-- <image /> -->
     </view>
   </view>

@@ -1,49 +1,79 @@
 /**index.wxss**/
 
 .headerTab {
-  width: 100%;
-  white-space: nowrap;
-  border-bottom: 2rpx solid #eeeeee;
-  text-align: center;
-  line-height: 88rpx;
-  margin-bottom: 10rpx;
+    width: 100%;
+    white-space: nowrap;
+    border-bottom: 2rpx solid #eeeeee;
+    text-align: center;
+    line-height: 88rpx;
+    margin-bottom: 10rpx;
 }
 .headerTabItem {
-  width: 20%;
-  color: #434343;
-  display: inline-block;
+    width: 20%;
+    color: #434343;
+    display: inline-block;
 }
 .headerTabItem.active {
-  color: #006600;
-  border-bottom: 4rpx solid #006600;
+    color: #006600;
+    border-bottom: 4rpx solid #006600;
 }
 .smallTypeListItem {
-  display: inline-block;
-  border-radius: 20rpx;
-  padding: 0 10rpx;
-  margin: 0 10rpx 10rpx 0;
+    display: inline-block;
+    border-radius: 20rpx;
+    padding: 0 10rpx;
+    margin: 0 10rpx 10rpx 0;
 }
 .smallTypeListItem.active {
-  /* background:  */
+    /* background:  */
 }
 /* 重复样式 */
-.userProfile {
-  height: 3rem;
-  line-height: 3rem;
-  border-bottom: 1rpx solid #eeeeee;
-  padding: 25rpx 2% 30rpx;
-}
-.avatar {
-  float: left;
-  height: 3rem;
-  width: 3rem;
-  border-radius: 50%;
-  margin-right: 1rem;
-  box-shadow: 2px 2px 5px 0px rgba(0, 102, 0, 1);
-  overflow: hidden;
-}
+
 .dataList > view {
-  background: rgba(255, 255, 255, 0.75);
-  margin-bottom: 20rpx;
-  padding: 0 15rpx;
+    background: rgba(255, 255, 255, 0.75);
+    margin-bottom: 20rpx;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    /* padding: 0 15rpx; */
+}
+.dataList .top {
+    display: flex;
+    justify-content: space-between;
+    height: 3rem;
+    line-height: 3rem;
+    border-bottom: 1rpx solid #eeeeee;
+    /* padding: 25rpx 2% 30rpx; */
+    padding: 25rpx 0 30rpx;
+}
+.dataList .user {
+    display: flex;
+    justify-content: space-between;
+}
+.user .userAvatar {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+    box-shadow: 2px 2px 5px 0px rgba(0, 102, 0, 1);
+    overflow: hidden;
+}
+.user .userInfo {
+    display: flex;
+    flex-direction: column;
+}
+.user .userInfo text {
+    height: 50%;
+    line-height: 1.5rem;
+}
+.dataList .more {
+}
+.dataList .content {
+    padding: 0 15rpx 30rpx;
+}
+.dataList .bottom {
+    padding: 0 15rpx 10rpx;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eeeeee;
+}
+.dataList .bottom a {
+    margin-left: 5rpx;
 }

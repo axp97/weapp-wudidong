@@ -23,7 +23,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.9.3",
 	"appid": "wxb3fcd99e1d1bf681",
-	"projectname": "miniprogram",
+	"projectname": "weapp-wudidong",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
