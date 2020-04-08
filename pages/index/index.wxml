@@ -1,0 +1,30 @@
+<!-- index.wxml -->
+<import src="../template/template.wxml" />
+<view class="container">
+  <scroll-view scroll-x="true" class="headerTab">
+    <view wx:for="{{typeList}}" wx:for-index="idx" wx:key="{{index}}" data-id="{{item.id}}" data-idx="{{idx}}" bindtap="clickType" class="headerTabItem {{currentType == idx?'active':''}}" style="width: {{typeList.length < 4 ? 100/typeList.length : 100/4}}%">
+      {{item.name}}
+    </view>
+  </scroll-view>
+  <view class="smallTypeList" wx:if="{{smallTypeList.length}}" current="{{currentSmallType}}">
+    <view wx:for="{{smallTypeList}}" wx:for-index="smallTypeIdx" wx:key="{{index}}" data-current="{{smallTypeIdx}}" data-id="{{item.id}}" data-idx="{{smallTypeIdx}}" bindtap="clickSmallType" class="smallTypeListItem {{currentSmallType == smallTypeIdx?'active':''}}" style="background: #{{currentSmallType==smallTypeIdx ? (item.bg || '76c583') : 'ffffff'}}; color: #{{currentSmallType==smallTypeIdx ?  'ffffff' : ( item.bg || '76c583') }}; border: 1px solid #{{item.bg || '76c583'}};">
+      <text>#{{item.name}}</text>
+    </view>
+  </view>
+  <template wx:else is="pageEmpty" />
+  <view class="dataList">
+    <view wx:for="{{dataList}}" wx:for-index="dataIdx" wx:key="{{index}}">
+      <view class="userProfile">
+        <image class="avatar" type="userAvatarUrl" />
+        <!-- <open-data class="avatar" type="userAvatarUrl"></open-data> -->
+        <text>{{item.name}}</text>
+      </view>
+      <text>{{item.content}}</text>
+      <view>type
+        评论
+        赞</view>
+      <!-- <image /> -->
+    </view>
+  </view>
+  <customTabbar activeIndex='1'></customTabbar>
+</view>

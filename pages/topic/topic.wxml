@@ -1,0 +1,9 @@
+<!--pages/topic/topic.wxml-->
+<import src="../template/template.wxml" />
+<view class="container">
+  <view class="body">
+    <text>敬请期待~</text>
+  </view>
+  <template is="pageEmpty" />
+  <customTabbar activeIndex='0'></customTabbar>
+</view>

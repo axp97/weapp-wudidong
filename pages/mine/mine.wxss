@@ -1,0 +1,254 @@
+/* pages/mine/mine.wxss */
+@import "./subpage/userConsole/userConsole.wxss";
+@import "./subpage/setting/setting.wxss";
+/* page{
+  width: 100%;
+  height: 100%;
+  background-color: #FBFCFE;
+}
+page__header{
+  width:100%;
+} */
+.weui-search-bar {
+  background-color: #dc4238;
+  border: 1px solid #dc4238;
+}
+.weui-search-bar__box {
+  position: relative;
+}
+.weui-icon-search_in-box {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.weui-search-bar__label {
+  /* width: 80%; */
+
+  background-color: #de655c;
+  border: 0px solid #de655c;
+  border-radius: 20rpx;
+}
+.weui-search-bar__from {
+  height: 65rpx;
+}
+.weui-search-bar__text {
+  color: #eda8a3;
+}
+.swiper_header {
+  display: flex;
+  justify-content: center;
+  /* background-color: #dc4238; */
+  padding-bottom: 10rpx;
+}
+.headerItem {
+  display: inline-block;
+  text-align: center;
+  /* width: 50%; */
+  /* color: #dc4238; */
+  font-size: 15px;
+  box-sizing: border-box;
+}
+/* .swiper_header{
+background-color: #DC4238;
+padding-bottom: 10rpx
+}
+.swiper_header_first{
+  display:inline-block;
+  text-align: center;
+  width: 50%;
+  color: blue;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+.swiper_header_second{
+  display:inline-block;
+  text-align: center;
+  width: 50%;
+  color: blue;
+  font-size: 15px;
+  box-sizing: border-box;
+} */
+.swiper_header_line {
+  width: 8%;
+  height: 10rpx;
+  background-color: blue;
+  border-radius: 10rpx;
+  top: 0;
+  left: -189rpx;
+  right: 0;
+  margin: auto;
+  position: relative;
+}
+.swiper_header_line_hide {
+  display: none;
+}
+.swiper_header_line_after {
+  width: 8%;
+  height: 10rpx;
+  background-color: blue;
+  border-radius: 10rpx;
+  top: 0;
+  left: 189rpx;
+  right: 0;
+  margin: auto;
+  position: relative;
+}
+.Allswipew {
+  height: 100%;
+  /* width:100%;
+  height: 100%; */
+}
+.swipew {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 94%;
+  height: 90%;
+  border-radius: 15rpx;
+}
+.radio_banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 75%;
+  height: 90%;
+  border-radius: 15rpx;
+}
+.swiper_item {
+  padding-bottom: 15rpx;
+}
+.comment_container_box {
+  display: flex;
+  height: 130rpx;
+  position: relative;
+  margin-top: 20rpx;
+  padding-bottom: 40rpx;
+  border-bottom: 1px solid #edeef0;
+}
+.comment_box {
+  width: 25%;
+  text-align: center;
+}
+.contaner_images {
+  width: 80rpx;
+  height: 40px;
+  background-color: #dc4238;
+  border-radius: 50%;
+  left: 50%;
+  transform: translate(60%);
+}
+.commentImage {
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, 50%);
+}
+.comment_text {
+  font-size: 14px;
+}
+.songsheet_items_allbox {
+  margin-top: 25rpx;
+}
+.songsheet_container_title {
+  font-size: 17px;
+  font-weight: bold;
+  padding-left: 10rpx;
+}
+.songsheet_container_image {
+  width: 95%;
+  height: 220rpx;
+  /* padding: 10rpx; */
+  margin: 5rpx;
+  border-radius: 8rpx;
+}
+.songsheet_container_text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-size: 13px;
+  margin-top: 10rpx;
+  padding-left: 10rpx;
+}
+.songsheet_item_box {
+  padding-top: 10rpx;
+  width: 33%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+.recommend_mv {
+  padding-top: 10rpx;
+  width: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+.title_leader_box {
+  text-align: center;
+  display: inline-block;
+}
+.title_leader {
+  width: 18px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.changechange {
+  width: 14px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.newsong_allbox {
+  margin-bottom: 40rpx;
+}
+.newsong_songname {
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.newsong_artists {
+  font-size: 10px;
+  padding-left: 10rpx;
+  padding-top: -10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.tourism_box {
+  margin-bottom: 100rpx;
+}
+.newest_allbox {
+  margin-bottom: 100rpx;
+}
+.changechangetext {
+  font-size: 13px;
+  color: #8a8a8a;
+}
+.changechange_box {
+  display: initial;
+  position: absolute;
+  right: 40rpx;
+}
+.weui-navbar-slider {
+  width: 28px;
+  height: 5px;
+  background: blue;
+  border-radius: 10rpx;
+  transition: transform 0.6s;
+}

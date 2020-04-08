@@ -1,0 +1,15 @@
+<!-- pages/userConsole/userConsole.wxml -->
+<import src="../../../template/template.wxml" />
+<view class="container">
+  <!-- <template is="pageHead" data="{{...head}}"/> -->
+  <view class="body list">
+    <view wx:for="{{dataList}}" wx:key="*this" wx:for-index="dataIdx" class="ucItem">
+      <icon class="iconfont {{item.icon}}  leftIcon"></icon>
+      <view class="rightPane">
+        {{item.name}}
+        <icon class="iconfont iconarrowright rightIcon"></icon>
+      </view>
+    </view>
+  </view>
+  <!-- <customTabbar activeIndex='3'></customTabbar> -->
+</view>

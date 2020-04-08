@@ -1,0 +1,8 @@
+<view class="tabbarWrap">
+   <view class='tabbarItem' wx:for='{{data.tabs}}' wx:key='' bindtap='clickTag' data-index='{{index}}'>
+      <icon class="iconfont {{item.icon}}" style='color:{{index == activeIndex?data.tabStyle.activeColor:data.tabStyle.inactiveColor}}'></icon>
+      <view wx:if="{{item.content}}" style='color:{{index == activeIndex?data.tabStyle.activeColor:data.tabStyle.inactiveColor}}'>
+         {{item.content}}
+      </view>
+   </view>
+</view>

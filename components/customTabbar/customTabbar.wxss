@@ -1,0 +1,39 @@
+@import "/style/iconfont.wxss";
+.tabbarWrap {
+  height: 2.8rem;
+  /* background: #fff; */
+  width: 100%;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0 -1rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+.tabbarItem {
+  flex: 1;
+  height: 2.8rem;
+  position: relative;
+  font-size: 24rpx;
+  font-family: PingFangSC-Medium;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* tabbar-image */
+.tabbarItem icon {
+  font-size: 1.6rem;
+}
+
+.tabbarItem:nth-child(2) {
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  /* background: #ffffff; */
+}
+.tabbarItem:nth-child(2) icon {
+  /* color: rgba(0, 102, 0, 0.4) !important; */
+  font-size: 2.5rem;
+  border-radius: 50%;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.2);
+  margin-top: -1.5rem;
+  padding: 0 0.25rem;
+}

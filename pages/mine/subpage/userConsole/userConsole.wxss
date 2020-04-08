@@ -1,0 +1,33 @@
+/* pages/userConsole/userConsole.wxss */
+.ucItem {
+  height: 3rem;
+  line-height: 3rem;
+  padding: 30rpx 0 12rpx;
+}
+
+.leftIcon {
+  width: 3rem;
+
+  border-radius: 12rpx;
+  text-align: center;
+  font-size: 1.8rem;
+  color: rgba(0, 102, 0);
+  background: rgba(0, 102, 0, 0.2);
+  margin-right: 1rem;
+}
+
+.rightPane {
+  width: 15rem;
+  display: inline-block;
+  border-bottom: 2rpx solid #eeeeee;
+}
+
+.ucItem:last-child .rightPane {
+  border-bottom: none;
+}
+
+.rightIcon {
+  float: right;
+  font-size: 1.5rem;
+  color: #999999;
+}

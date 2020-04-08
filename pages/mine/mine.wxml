@@ -1,0 +1,23 @@
+<!-- pages/mine/mine.wxml -->
+<import src="../template/template.wxml" />
+<view class='swiper_header'>
+  <view wx:for="{{headerList}}" wx:for-index="idx" wx:key="idx" class="headerItem" style="width: {{100/headerList.length}}%;text-align: center;">
+    {{item}}
+  </view>
+  <view class="weui-navbar-slider" style="transform:translateX({{slideOffset}}px);"></view>
+</view>
+<swiper class='Allswipew' bindchange="changeline" current="{{activeIndex}}">
+  <swiper-item class="swipew">
+    1
+    <include src="./subpage/userConsole/userConsole.wxml" />
+  </swiper-item>
+  <swiper-item class="swipew">
+    2
+    <include src="./subpage/setting/setting.wxml" />
+  </swiper-item>
+  <swiper-item class="swipew">
+    3
+    <include src="./subpage/setting/setting.wxml" />
+  </swiper-item>
+</swiper>
+<customTabbar activeIndex='2'></customTabbar>
