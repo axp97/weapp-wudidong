@@ -1,11 +1,21 @@
 <!-- index.wxml -->
 <import src="../template/template.wxml" />
 <view class="container">
-  <scroll-view scroll-x="true" class="headerTab">
-    <view wx:for="{{typeList}}" wx:for-index="idx" wx:key="{{index}}" data-id="{{item.id}}" data-idx="{{idx}}" bindtap="clickType" class="headerTabItem {{currentType == idx?'active':''}}" style="width: {{typeList.length < 4 ? 100/typeList.length : 100/4}}%">
-      {{item.name}}
+  <!-- <view>
+    <view>收藏</view>
+    <view>热门</view>
+    <view>广场</view>
+  </view> -->
+  <view class="headerTab">
+    <scroll-view scroll-x="true" class="nav">
+      <view wx:for="{{typeList}}" wx:for-index="idx" wx:key="{{index}}" data-id="{{item.id}}" data-idx="{{idx}}" bindtap="clickType" class="navItem {{currentType == idx?'active':''}}" style="width: {{typeList.length < 4 ? 100/typeList.length : 100/4}}%">
+        {{item.name}}
+      </view>
+    </scroll-view>
+    <view class="navIcon">
+      <icon class="iconfont iconmessage" size="23px"  bindtap="post"></icon>
     </view>
-  </scroll-view>
+  </view>
   <view class="smallTypeList" wx:if="{{smallTypeList.length}}" current="{{currentSmallType}}">
     <view wx:for="{{smallTypeList}}" wx:for-index="smallTypeIdx" wx:key="{{index}}" data-current="{{smallTypeIdx}}" data-id="{{item.id}}" data-idx="{{smallTypeIdx}}" bindtap="clickSmallType" class="smallTypeListItem {{currentSmallType == smallTypeIdx?'active':''}}" style="background: #{{currentSmallType==smallTypeIdx ? (item.bg || '76c583') : 'ffffff'}}; color: #{{currentSmallType==smallTypeIdx ?  'ffffff' : ( item.bg || '76c583') }}; border: 1px solid #{{item.bg || '76c583'}};">
       <text>#{{item.name}}</text>
@@ -13,24 +23,24 @@
   </view>
   <template wx:else is="pageEmpty" />
   <view class="dataList">
-    <view wx:for="{{dataList}}" wx:for-index="dataIdx" wx:key="{{index}}">
+    <view wx:for="{{dataList}}" wx:for-index="dataIdx" wx:key="{{index}}" bindtap="onTapdetail" data-postItem="{{item}}">
       <view class="top">
         <view class="user">
           <image class="userAvatar" type="userAvatarUrl" />
           <!-- <open-data class="avatar" type="userAvatarUrl"></open-data> -->
           <view class="userInfo">
-            <text>{{item.name}}</text>
-            <text>{{item.release}}</text>
+            <h1>{{item.name}}</h1>
+            <text class="dateText">{{item.release}}</text>
           </view>
         </view>
-        <view class="more">more</view>
+        <view class="more dateText">more</view>
       </view>
-      <view class="content">
+      <view class="content describeText">
         <text>{{item.content}}</text>
       </view>
       <view class="bottom">
-        <a>type</a>
-        <view>
+        <a class="activeText">{{item.typeName}}</a>
+        <view class="dateText">
           <a>
             <icon class="iconfont iconmessage"></icon>
             {{item.reply_num}}

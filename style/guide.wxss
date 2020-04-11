@@ -1,4 +1,19 @@
 page {
+  /* CSS variables */
+  --border-onepx: 1px solid #eeeeee;
+  --border-twopx: 2px solid #eeeeee;
+
+  --active-color: #006600;
+
+  --font-color: #333333;
+  --font-describe: #999999;
+  --font-date: #8d8d8d;
+
+  --icon-color: rgba(0, 102, 0, 1);
+  --icon-bg: rgba(0, 102, 0, 0.2);
+
+  --avatar-shadow: 2px 2px 5px 0px rgba(0, 102, 0, 1);
+  /* Global style */
   /* background: #f6f6f6; */
   display: flex;
   flex-direction: column;
@@ -9,6 +24,19 @@ page {
     rgba(29, 119, 69, 0.05),
     rgba(29, 119, 69, 0.25)
   );
+  color: var(--font-color);
+}
+h1 {
+  color: #000000;
+}
+.describeText {
+  color: var(--font-describe);
+}
+.dateText {
+  color: var(--font-date);
+}
+.activeText {
+  color: var(--active-color);
 }
 
 /* .list {
@@ -51,7 +79,7 @@ page {
   margin: 20rpx 0;
 } */
 
-.request-text {
+/* .request-text {
   color: #222;
   padding: 20rpx 0;
   font-size: 24rpx;
@@ -146,4 +174,4 @@ page {
 
 .guide .nav .next {
   margin-right: unset;
-}
+} */

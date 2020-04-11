@@ -11,15 +11,15 @@
   border-radius: 12rpx;
   text-align: center;
   font-size: 1.8rem;
-  color: rgba(0, 102, 0);
-  background: rgba(0, 102, 0, 0.2);
+  color: var(--icon-color);
+  background: var(--icon-bg);
   margin-right: 1rem;
 }
 
 .rightPane {
   width: 15rem;
   display: inline-block;
-  border-bottom: 2rpx solid #eeeeee;
+  border-bottom: var(--border-twopx);
 }
 
 .ucItem:last-child .rightPane {

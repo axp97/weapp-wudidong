@@ -1,0 +1,20 @@
+<import src="../../../template/template.wxml" />
+<view>
+  <view class="top">
+    <view class="user">
+      <image class="userAvatar" type="userAvatarUrl" />
+      <!-- <open-data class="avatar" type="userAvatarUrl"></open-data> -->
+      <view class="userInfo">
+        <h1>{{detail.name}}</h1>
+        <text class="dateText">{{detail.release}}</text>
+      </view>
+    </view>
+    <view class="more dateText ">
+      <!-- 11 {{detail.typeName}} -->
+      <a class="activeText">{{detail.typeName}}</a>
+    </view>
+  </view>
+  <view class="content describeText">
+    <text>{{detail.content}}</text>
+  </view>
+</view>

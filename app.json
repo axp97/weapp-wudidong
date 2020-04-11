@@ -2,10 +2,11 @@
   "pages": [
     "pages/index/index",
     "pages/topic/topic",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/index/subpage/detail/detail"
   ],
   "window": {
-    "backgroundColor": "#FFF", 
+    "backgroundColor": "#FFF",
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#FFF",
     "navigationBarTitleText": "无底洞",
@@ -35,8 +36,6 @@
     "downloadFile": 10000
   },
   "debug": true,
-  "navigateToMiniProgramAppIdList": [
-    "wxe5f52902cf4de896"
-  ],
+  "navigateToMiniProgramAppIdList": ["wxe5f52902cf4de896"],
   "sitemapLocation": "sitemap30.json"
 }
