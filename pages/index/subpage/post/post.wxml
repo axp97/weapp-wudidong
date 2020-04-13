@@ -1,0 +1,4 @@
+<import src="../../../template/template.wxml" />
+<view>
+  <view class="content describeText">想说些什么...</view>
+</view>
