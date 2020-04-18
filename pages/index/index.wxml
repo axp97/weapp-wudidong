@@ -8,50 +8,64 @@
   </view> -->
   <view class="headerTab">
     <scroll-view scroll-x="true" class="nav">
-      <view wx:for="{{typeList}}" wx:for-index="idx" wx:key="{{index}}" data-id="{{item.id}}" data-idx="{{idx}}" bindtap="clickType" class="navItem {{currentType == idx?'active':''}}" style="width: {{typeList.length < 4 ? 100/typeList.length : 100/4}}%">
+      <view wx:for="{{typeList}}" wx:for-index="idx" wx:key="{{index}}" data-id="{{item._id}}" data-idx="{{idx}}" bindtap="clickType" class="navItem {{currentType == idx?'active':''}}" style="width: {{typeList.length < 4 ? 100/typeList.length : 100/4}}%">
         {{item.name}}
       </view>
     </scroll-view>
     <view class="navIcon">
-      <icon class="iconfont iconmessage" size="23px"  bindtap="post"></icon>
+      <icon class="iconfont iconmessage" size="23px" bindtap="post"></icon>
     </view>
   </view>
-  <view class="smallTypeList" wx:if="{{smallTypeList.length}}" current="{{currentSmallType}}">
-    <view wx:for="{{smallTypeList}}" wx:for-index="smallTypeIdx" wx:key="{{index}}" data-current="{{smallTypeIdx}}" data-id="{{item.id}}" data-idx="{{smallTypeIdx}}" bindtap="clickSmallType" class="smallTypeListItem {{currentSmallType == smallTypeIdx?'active':''}}" style="background: #{{currentSmallType==smallTypeIdx ? (item.bg || '76c583') : 'ffffff'}}; color: #{{currentSmallType==smallTypeIdx ?  'ffffff' : ( item.bg || '76c583') }}; border: 1px solid #{{item.bg || '76c583'}};">
+  <button class="btn" type="primary" loading="{{loading}}" disabled="{{disabled}}" bindtap="addSubType">
+    添加子类
+  </button>
+  <modal show="{{showModal}}" height='60%' bindconfirm='modalConfirm'>
+    <text class="leftLabel">输入子类名称</text>
+    <input maxlength="5" bindinput="saveSubTypeName" style="border-bottom: 1px solid #ccc " />
+    <text class="leftLabel">选择颜色</text>
+    <input maxlength="5" bindinput="saveSubTypeColor" style="border-bottom: 1px solid #ccc " />
+  </modal>
+  <template wx:if="{{!smallTypeList.length}}" is="pageEmpty" />
+  <view class="smallTypeList" wx:else current="{{currentSmallType}}">
+    <view wx:for="{{smallTypeList}}" wx:for-index="smallTypeIdx" wx:key="{{index}}" data-current="{{smallTypeIdx}}" data-id="{{item._id}}" data-idx="{{smallTypeIdx}}" bindtap="clickSmallType" class="smallTypeListItem {{currentSmallType == smallTypeIdx?'active':''}}" style="background: #{{currentSmallType==smallTypeIdx ? (item.bg || '76c583') : 'ffffff'}}; color: #{{currentSmallType==smallTypeIdx ?  'ffffff' : ( item.bg || '76c583') }}; border: 1px solid #{{item.bg || '76c583'}};">
       <text>#{{item.name}}</text>
     </view>
-  </view>
-  <template wx:else is="pageEmpty" />
-  <view class="dataList">
-    <view wx:for="{{dataList}}" wx:for-index="dataIdx" wx:key="{{index}}" bindtap="onTapdetail" data-postItem="{{item}}">
-      <view class="top">
-        <view class="user">
-          <image class="userAvatar" type="userAvatarUrl" />
-          <!-- <open-data class="avatar" type="userAvatarUrl"></open-data> -->
-          <view class="userInfo">
-            <h1>{{item.name}}</h1>
-            <text class="dateText">{{item.release}}</text>
+    <view class="dataList">
+      <view wx:for="{{dataList}}" wx:for-item="data" wx:for-index="dataIdx" wx:key="{{index}}" bindtap="toDetailPage" data-postItem="{{data}}">
+        <view class="top">
+          <view class="user">
+            <image class="userAvatar" type="userAvatarUrl" />
+            <!-- <open-data class="avatar" type="userAvatarUrl"></open-data> -->
+            <view class="userInfo">
+              <h1>{{data.name}}</h1>
+              <text class="dateText">{{data.release}}</text>
+            </view>
+          </view>
+          <view class="more dateText">more</view>
+        </view>
+        <view class="content describeText">
+          <text>{{data.content}}</text>
+        </view>
+        <view class='imgBox'>
+          <view class='img' wx:for='{{data.image_arr}}' wx:key="*this">
+            <image src='{{item}}' data-url="{{item}}" data-urls="{{data.image_arr}}" mode="aspectFill" catchtap="previewImg"></image>
           </view>
         </view>
-        <view class="more dateText">more</view>
-      </view>
-      <view class="content describeText">
-        <text>{{item.content}}</text>
-      </view>
-      <view class="bottom">
-        <a class="activeText">{{item.typeName}}</a>
-        <view class="dateText">
-          <a>
-            <icon class="iconfont iconmessage"></icon>
-            {{item.reply_num}}
-          </a>
-          <a>
-            <icon class="iconfont iconawesome"></icon>
-            {{item.like_num}}
-          </a>
+        <view class="bottom">
+          <a class="activeText">{{data.typeName}}</a>
+          <view class="dateText">
+            <a>
+              <icon class="iconfont iconmessage"></icon>
+              {{data.reply_num}}
+            </a>
+            <a>
+              <icon class="iconfont iconawesome"></icon>
+              {{data.like_num}}
+            </a>
+          </view>
         </view>
+        <!-- <image /> -->
       </view>
-      <!-- <image /> -->
     </view>
   </view>
   <customTabbar activeIndex='1'></customTabbar>

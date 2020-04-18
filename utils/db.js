@@ -11,7 +11,7 @@ module.exports = {
    * @param collection 集合
    * @return {"_id": String, "errMsg": String}
    */
-  add: function(data, collection) {
+  add: function(collection, data) {
     return db.collection(collection).add({
       data: data
     })

@@ -10,11 +10,15 @@
       </view>
     </view>
     <view class="more dateText ">
-      <!-- 11 {{detail.typeName}} -->
       <a class="activeText">{{detail.typeName}}</a>
     </view>
   </view>
   <view class="content describeText">
     <text>{{detail.content}}</text>
+  </view>
+  <view class='imgBox'>
+    <view class='img' wx:for='{{detail.image_arr}}' wx:key="*this">
+      <image src='{{item}}' data-url="{{item}}" data-urls="{{detail.image_arr}}" mode="aspectFill" catchtap="previewImg"></image>
+    </view>
   </view>
 </view>

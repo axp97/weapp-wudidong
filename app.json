@@ -1,42 +1,43 @@
 {
-    "pages": [
-        "pages/index/index",
-        "pages/topic/topic",
-        "pages/mine/mine",
-        "pages/index/subpage/detail/detail",
-        "pages/index/subpage/post/post"
-    ],
-    "window": {
-        "backgroundColor": "#FFF",
-        "backgroundTextStyle": "dark",
-        "navigationBarBackgroundColor": "#FFF",
-        "navigationBarTitleText": "无底洞",
-        "navigationBarTextStyle": "black",
-        "enablePullDownRefresh": true
-    },
-    "usingComponents": {
-        "customTabbar": "components/customTabbar/customTabbar"
-    },
-    "tabBar": {
-        "backgroundColor": "#fffffff",
-        "borderStyle": "white",
-        "list": [
-            {
-                "pagePath": "pages/topic/topic"
-            },
-            {
-                "pagePath": "pages/index/index"
-            },
-            {
-                "pagePath": "pages/mine/mine"
-            }
-        ]
-    },
-    "networkTimeout": {
-        "request": 10000,
-        "downloadFile": 10000
-    },
-    "debug": true,
-    "navigateToMiniProgramAppIdList": ["wxe5f52902cf4de896"],
-    "sitemapLocation": "sitemap30.json"
+  "pages": [
+    "pages/index/index",
+    "pages/topic/topic",
+    "pages/mine/mine",
+    "pages/index/subpage/detail/detail",
+    "pages/index/subpage/post/post"
+  ],
+  "window": {
+    "backgroundColor": "#FFF",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FFF",
+    "navigationBarTitleText": "无底洞",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "usingComponents": {
+    "customTabbar": "components/customTabbar/customTabbar",
+    "modal": "components/modal/modal"
+  },
+  "tabBar": {
+    "backgroundColor": "#fffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/topic/topic"
+      },
+      {
+        "pagePath": "pages/index/index"
+      },
+      {
+        "pagePath": "pages/mine/mine"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": ["wxe5f52902cf4de896"],
+  "sitemapLocation": "sitemap30.json"
 }
