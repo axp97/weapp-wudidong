@@ -12,16 +12,19 @@
   </view>
 </view>
 <view class="completeBtn">
-  <button type="primary" bindtap="completeBtn" disabled="{{!content || !inputValue}}">完成</button>
+  <!-- disabled="{{!content || !inputValue}}" -->
+  <button type="primary" bindtap="completeBtn" disabled="{{!content}}">完成</button>
 </view>
-<view class="pickerBox">
-  <text class="leftLabel">发布频道</text>
-  <picker class="picker" mode="selector" range="{{typeArr}}" range-key="name" value="{{index}}" bindchange="bindPickerChange">
-    {{typeArr[index].name}}
-    <icon type="iconfont iconarrowdown" />
-  </picker>
-</view>
-<view class="pickerBox">
-  <text class="leftLabel">取个名字</text>
-  <input maxlength="8" bindinput="bindKeyInput" />
-</view>
+<modal show="{{showModal}}" height='60%' bindconfirm='modalConfirm'>
+  <view class="pickerBox">
+    <text class="leftLabel">发布频道</text>
+    <picker class="picker" mode="selector" range="{{typeArr}}" range-key="name" value="{{index}}" bindchange="bindPickerChange">
+      {{typeArr[index].name}}
+      <icon type="iconfont iconarrowdown" />
+    </picker>
+  </view>
+  <view class="pickerBox">
+    <text class="leftLabel">取个名字</text>
+    <input maxlength="8" bindinput="bindKeyInput" />
+  </view>
+</modal>

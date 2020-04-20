@@ -58,7 +58,7 @@
               <icon class="iconfont iconmessage"></icon>
               {{data.reply_num}}
             </a>
-            <a>
+            <a  data-postId="{{data._id}}" catchtap="zan">
               <icon class="iconfont iconawesome"></icon>
               {{data.like_num}}
             </a>
