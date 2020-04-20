@@ -1,0 +1,20 @@
+<!-- pages/mine/mine.wxml -->
+<import src="../../../template/template.wxml" />
+<view class="userProfile">
+  <open-data class="avatar" type="userAvatarUrl"></open-data>
+  <open-data type="userNickName" lang="zh_CN"></open-data>
+</view>
+<view class="userInfo">
+  <view wx:for="{{dataList}}" wx:key="*this" wx:for-index="dataIdx" class="listItem">
+    <icon class="iconfont {{item.icon}}"></icon>
+    <text>{{item.name}}</text>
+  </view>
+</view>
+<template is="grayBlock" data="{{grayHeight}}" />
+<view class="aboutBox">
+  <view wx:for="{{aboutList}}" wx:key="*this" wx:for-index="dataIdx" class="aboutItem">
+    <icon class="iconfont {{item.icon}} leftIcon"></icon>
+    <text>{{item.name}}</text>
+    <icon maxlengthclass="iconfont iconarrowright rightIcon"></icon>
+  </view>
+</view>
