@@ -13,14 +13,13 @@ App({
         traceUser: true,
       });
     }
-    wx.cloud.callFunction({
-      name: "login",
-      complete: function (res) {
-        console.log("complete", res);
-        console.log("云函数获取到的openid: ", res.result.openid);
-      },
-    });
 
     this.globalData = {};
+  },
+  
+  getOpenid: async function () {
+    let res = await wx.cloud.callFunction({ name: 'login' })
+    wx.setStorageSync('openid', res.result.openid)
+    return res.result.openid;
   },
 });
