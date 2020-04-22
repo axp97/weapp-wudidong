@@ -21,4 +21,30 @@
       <image src='{{item}}' data-url="{{item}}" data-urls="{{detail.image_arr}}" mode="aspectFill" catchtap="previewImg"></image>
     </view>
   </view>
+  <view>全部评论{{detail.reply_num}}</view>
+  <view class="bottom">
+    <view class="dateText">
+      <!-- <a>
+        <icon class="iconfont iconmessage"></icon>
+        评论
+      </a> -->
+      <view class="tool-item" catchtap='Comment' id="{{detail.id}}">
+        <!-- <image bindtap="bindReply" src="/images/comment.png"></image> -->
+        <icon bindtap="bindReply" class="iconfont iconmessage"></icon>
+      </view>
+      <a data-postId="{{detail._id}}" data-status="{{detail.isLike}}" data-index="{{dataIdx}}" catchtap="zan">
+        <icon class="iconfont iconawesome" style="color: {{detail.isLike ? '#006600': '#8d8d8d'}}"></icon>
+        {{detail.like_num}}
+      </a>
+    </view>
+  </view>
+  <view class="comment_release">
+    <view class="left">
+      <textarea class="text" placeholder-class="weui-input" fixed="true" maxlength="-1" show-confirm-bar="false" cursor-spacing="15" auto-height="true" bindtap="bindReply" focus="{{releaseFocus}}" placeholder="评论" />
+      <view class="line" />
+    </view>
+    <icon class="emoji" class="iconfont iconmessage"></icon>
+    <!-- <image class="emoji" src="/images/emoji.png" /> -->
+    <button form-type="submit" class="submit">发送</button>
+  </view>
 </view>

@@ -58,8 +58,8 @@
               <icon class="iconfont iconmessage"></icon>
               {{data.reply_num}}
             </a>
-            <a  data-postId="{{data._id}}" catchtap="zan">
-              <icon class="iconfont iconawesome"></icon>
+            <a data-postId="{{data._id}}" data-status="{{data.isLike}}" data-index="{{dataIdx}}" catchtap="zan">
+              <icon class="iconfont iconawesome" style="color: {{data.isLike ? '#006600': '#8d8d8d'}}"></icon>
               {{data.like_num}}
             </a>
           </view>
