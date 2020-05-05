@@ -15,6 +15,6 @@
   <view wx:for="{{aboutList}}" wx:key="*this" wx:for-index="dataIdx" class="aboutItem">
     <icon class="iconfont {{item.icon}} leftIcon"></icon>
     <text>{{item.name}}</text>
-    <icon maxlengthclass="iconfont iconarrowright rightIcon"></icon>
+    <icon maxlengthclass="iconfont arrowright rightIcon"></icon>
   </view>
 </view>

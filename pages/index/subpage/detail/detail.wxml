@@ -1,16 +1,11 @@
 <import src="../../../template/template.wxml" />
-<view>
+<view class="detailPage">
+  <view class="release0">{{detail.formatRelease0}}</view>
   <view class="top">
-    <view class="user">
-      <image class="userAvatar" type="userAvatarUrl" />
-      <!-- <open-data class="avatar" type="userAvatarUrl"></open-data> -->
-      <view class="userInfo">
-        <h1>{{detail.name}}</h1>
-        <text class="dateText">{{detail.release}}</text>
-      </view>
-    </view>
-    <view class="more dateText ">
-      <a class="activeText">{{detail.typeName}}</a>
+    <h1>{{!!detail.gender ? '他': '她'}}：
+          {{detail.name}}</h1>
+    <view class=" dateText ">
+      <a class="activeText  dateText">{{detail.typeName}}</a>
     </view>
   </view>
   <view class="content describeText">
@@ -21,30 +16,44 @@
       <image src='{{item}}' data-url="{{item}}" data-urls="{{detail.image_arr}}" mode="aspectFill" catchtap="previewImg"></image>
     </view>
   </view>
-  <view>全部评论{{detail.reply_num}}</view>
-  <view class="bottom">
-    <view class="dateText">
-      <!-- <a>
-        <icon class="iconfont iconmessage"></icon>
-        评论
-      </a> -->
-      <view class="tool-item" catchtap='Comment' id="{{detail.id}}">
-        <!-- <image bindtap="bindReply" src="/images/comment.png"></image> -->
-        <icon bindtap="bindReply" class="iconfont iconmessage"></icon>
+  <view>评论{{detail.reply_num}}</view>
+  <view class="commentList">
+    <view wx:for="{{commentList}}" wx:for-item="comment" wx:key="*this" class="commentItem">
+      <icon class="iconfont news" style="color: {{!!comment.gender ? '#006600': 'pink'}}"></icon>
+      <text>{{comment.nickname}}</text>
+      <text wx:if="{{comment.parent_id}}">
+        <text style="margin:0 10rpx">回复</text>
+        <text>{{comment.parent_nickname}}</text>
+      </text>
+      <view>
+        <!-- <view class="comment">{{comment.comment}}</view> -->
+        <view>
+          <view class="comment">{{comment.comment}}</view>
+          <view class="bottom">
+            <text class="date">{{comment.release}}</text>
+            <view class="btnGroup" data-id="{{comment._id}}" catchtap="replyComment">回复</view>
+          </view>
+        </view>
       </view>
-      <a data-postId="{{detail._id}}" data-status="{{detail.isLike}}" data-index="{{dataIdx}}" catchtap="zan">
-        <icon class="iconfont iconawesome" style="color: {{detail.isLike ? '#006600': '#8d8d8d'}}"></icon>
-        {{detail.like_num}}
-      </a>
+      <!-- <view wx:if="{{comment.child}}" wx:for="{{comment.child}}">
+
+      </view> -->
     </view>
   </view>
-  <view class="comment_release">
-    <view class="left">
-      <textarea class="text" placeholder-class="weui-input" fixed="true" maxlength="-1" show-confirm-bar="false" cursor-spacing="15" auto-height="true" bindtap="bindReply" focus="{{releaseFocus}}" placeholder="评论" />
-      <view class="line" />
+  <view class="showReply" wx:if="{{!showReply}}">
+    <!-- <view class="dateText"> -->
+    <view class="listItem" catchtap='clickComment' id="{{detail.id}}">
+      <icon bindtap="bindReply" class="iconfont message"></icon>
+      <text>{{detail.reply_num}}</text>
     </view>
-    <icon class="emoji" class="iconfont iconmessage"></icon>
-    <!-- <image class="emoji" src="/images/emoji.png" /> -->
-    <button form-type="submit" class="submit">发送</button>
+    <view class="listItem" data-postId="{{detail._id}}" data-status="{{detail.isLike}}" data-index="{{dataIdx}}" catchtap="zan">
+      <icon class="iconfont awesome" style="color: {{detail.isLike ? '#006600': '#8d8d8d'}}"></icon>
+      <text>{{detail.like_num}}</text>
+    </view>
+    <!-- </view> -->
+  </view>
+  <view class="comment_release" wx:else>
+    <textarea class='input describeText' bindinput='bindInput' placeholder='回复' value='{{comment}}' auto-height="true"></textarea>
+    <icon class="iconfont send" catchtap="sendComment"></icon>
   </view>
 </view>

@@ -1,7 +1,6 @@
-const formatTime = (date) => {
+const formatTime = (date, isSimple) => {
   console.log("date", date);
-  return getDateDiff(date);
-
+  return getDateDiff(date, isSimple || false);
 };
 
 //字符串转换为时间戳
@@ -9,8 +8,9 @@ function getDateTimeStamp(dateStr) {
   // return Date.parse(dateStr.replace(/-/gi, "/"));
   return dateStr.getTime();
 }
+
 //格式化时间
-function getDateDiff(dateStr) {
+function getDateDiff(dateStr, isSimple) {
   var publishTime = getDateTimeStamp(dateStr) / 1000,
     d_seconds,
     d_minutes,
@@ -42,6 +42,10 @@ function getDateDiff(dateStr) {
     s = "0" + s;
   }
 
+  if (isSimple) {
+    return Y + "-" + M + "-" + D + " " + H + ":" + m;
+  }
+
   d = timeNow - publishTime;
   d_days = parseInt(d / 86400);
   d_hours = parseInt(d / 3600);
@@ -68,5 +72,6 @@ function getDateDiff(dateStr) {
 }
 
 module.exports = {
-  formatTime: formatTime, //'对外方法名':'本地方法名'
+  formatTime0: this.formatTime0,
+  formatTime: formatTime,
 };

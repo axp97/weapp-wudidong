@@ -1,11 +1,25 @@
+.detailPage {
+  padding: 0 15rpx;
+  margin: 20rpx;
+  background-color: #ffffff;
+  border-radius: 3%;
+  min-height: 88%;
+}
+
+.release0 {
+  font-style: italic;
+  color: #76c583;
+  margin: 30rpx 0 0;
+}
+
 .top {
   display: flex;
   justify-content: space-between;
-  height: 3rem;
-  line-height: 3rem;
+  /* height: 3rem;
+  line-height: 3rem; */
   padding: 25rpx 0 30rpx;
 }
-.user{
+.user {
   display: flex;
   justify-content: space-between;
 }
@@ -30,11 +44,10 @@
   font-size: 12px;
   color: gray;
 }
-.more {
-}
 
 .content {
-  padding: 0 15rpx 30rpx;
+  /* padding: 0 15rpx 30rpx; */
+  padding-bottom: 30rpx;
 }
 
 .imgBox {
@@ -58,76 +71,92 @@
 }
 
 /*整体样式，就是黑色的容器*/
-.comment_release{
+.comment_release {
   display: flex;
-  align-items: flex-end; 
-  justify-content: space-between; 
+  align-items: flex-end;
+  justify-content: space-between;
   box-sizing: border-box;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  padding: 8px 0 8px 13px;
+  padding: 15rpx 0 20rpx 20rpx;
   background-color: #ffffff;
-  font-size: 12px;
+  /* font-size: 12px; */
   z-index: 999;
 }
-/**第一个红色的容器
- *大概想法就是给flex-direction赋一个colomn的值，并列放置
- */
-.comment_release.left{
-  display: flex;
-  flex-direction: column;
-}
+
 /*输入框*/
-.comment_release .text{
-  width: 222px;
+.comment_release .input {
+  /* width: 620rpx; */
   min-height: 17px;
   max-height: 51px; /*最多显示三行*/
   line-height: 17px;
-  font-size: 12px;
-  margin-bottom: 4px;
-  margin-left: 10px;
-}
-/*线*/
-.comment_release .line{
-margin-bottom: 0 ;
-width: 222px;
-height: 1rpx;
-background-color: #4B5CD7;
-}
-/*表情图标*/
-.comment_release .emoji{
-  width: 24px;
-  height: 24px;
-  line-height: 27px;
-  margin-right: 5px;
-  margin-left: 5px;
-}
-/*发送按钮*/
-.comment_release .submit{ 
-  width: 60px;
-  height: 27px;
-  line-height: 27px;
-  text-align: center;
-  margin-right: 10px;
-  background-color: #4B5CD7;
-  color: #ffffff;
-  font-size: 12px;
 }
 
-.tool{
-  height: 64rpx;
-  text-align: right;
-  line-height: 64rpx;
-  margin:20rpx 28rpx 20rpx 0;
+.comment_release .send {
+  padding: 0 20rpx 0 15rpx;
+  color: var(--active-color);
+  font-size: 20px;
+  font-weight: bold;
 }
-.tool-item{
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 30rpx;
+
+/* bottom */
+.showReply {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* height: 3.5rem; */
+  /* line-height: 3.5rem; */
+  border-top: var(--border-onepx);
+  /* padding: 15rpx 0 20rpx 20rpx; */
 }
-.tool-item image{
-  height: 50rpx;
-  width: 50rpx;
+
+.listItem {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  border-right: var(--border-onepx);
+  margin-right: 10rpx;
+  padding: 15rpx 0 20rpx 20rpx;
+}
+
+.listItem icon {
+  font-size: 1.5rem;
+  color: var(--icon-color);
+  margin-right: 0.5rem;
+}
+
+.listItem:last-child {
+  border-right: none;
+}
+
+.commentItem > icon {
+  /* color: var(--active-color); */
+  color: pink;
+}
+
+.commentItem view {
+  text-indent: 1em;
+}
+
+.commentItem .comment {
+  padding: 15rpx 0;
+}
+
+.commentItem .bottom {
+  display: flex;
+  text-indent: 1em;
+
+  font-size: 14px;
+}
+.commentItem .date {
+  color: var(--font-date);
+}
+
+.commentItem .btnGroup {
+  color: var(--active-color);
 }

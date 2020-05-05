@@ -7,17 +7,17 @@ module.exports = {
     {
       path: "/pages/topic/topic",
       content: "遇见",
-      icon: "icontogether",
+      icon: "together",
     },
     {
       path: "/pages/index/index",
       content: "",
-      icon: "iconhome",
+      icon: "home",
     },
     {
       path: "/pages/mine/mine",
       content: "我的",
-      icon: "iconmine",
+      icon: "mine",
     },
   ],
 };

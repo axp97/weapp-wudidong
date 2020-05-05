@@ -1,11 +1,12 @@
 @font-face {
-  font-family: 'iconfont';  /* project id 1506242 */
-  src: url('//at.alicdn.com/t/font_1506242_sgqa9fgcpt.eot');
-  src: url('//at.alicdn.com/t/font_1506242_sgqa9fgcpt.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1506242_sgqa9fgcpt.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1506242_sgqa9fgcpt.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1506242_sgqa9fgcpt.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1506242_sgqa9fgcpt.svg#iconfont') format('svg');
+  font-family: "iconfont"; /* project id 1506242 */
+  src: url("//at.alicdn.com/t/font_1506242_5q8gm6ervj4.eot");
+  src: url("//at.alicdn.com/t/font_1506242_5q8gm6ervj4.eot?#iefix")
+      format("embedded-opentype"),
+    url("//at.alicdn.com/t/font_1506242_5q8gm6ervj4.woff2") format("woff2"),
+    url("//at.alicdn.com/t/font_1506242_5q8gm6ervj4.woff") format("woff"),
+    url("//at.alicdn.com/t/font_1506242_5q8gm6ervj4.ttf") format("truetype"),
+    url("//at.alicdn.com/t/font_1506242_5q8gm6ervj4.svg#iconfont") format("svg");
 }
 
 .iconfont {
@@ -16,99 +17,122 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.iconhome:before {
+.female:before {
+  content: "\e69b";
+}
+
+.male:before {
+  content: "\e88f";
+}
+
+.news:before {
+  content: "\e6c0";
+}
+
+.write:before {
+  content: "\e646";
+}
+
+.send:before {
+  content: "\e734";
+}
+
+.more:before {
+  content: "\e68f";
+}
+
+.home:before {
   content: "\e634";
 }
 
-.iconfavorite:before {
+.favorite:before {
   content: "\e606";
 }
 
-.iconrelease:before {
+.release:before {
   content: "\e628";
 }
 
-.iconadd:before {
+.add:before {
   content: "\e6c2";
 }
 
-.iconawesome:before {
+.awesome:before {
   content: "\e6f1";
 }
 
-.iconabout:before {
+.about:before {
   content: "\e600";
 }
 
-.iconmine:before {
+.mine:before {
   content: "\e627";
 }
 
-.iconletter:before {
+.letter:before {
   content: "\e60f";
 }
 
-.iconlogin:before {
+.login:before {
   content: "\e6e5";
 }
 
-.iconhot:before {
+.hot:before {
   content: "\e6df";
 }
 
-.iconempty:before {
+.empty:before {
   content: "\e604";
 }
 
-.iconmessage:before {
+.message:before {
   content: "\e635";
 }
 
-.iconnewmessage:before {
+.newmessage:before {
   content: "\e636";
 }
 
-.iconsetting:before {
+.setting:before {
   content: "\e63f";
 }
 
-.iconnotification1:before {
+.notification1:before {
   content: "\e642";
 }
 
-.iconemail:before {
+.email:before {
   content: "\e64b";
 }
 
-.iconhelp:before {
+.help:before {
   content: "\e655";
 }
 
-.iconlike:before {
+.like:before {
   content: "\e657";
 }
 
-.iconarrowup:before {
+.arrowup:before {
   content: "\e658";
 }
 
-.iconarrowleft:before {
+.arrowleft:before {
   content: "\e659";
 }
 
-.iconarrowdown:before {
+.arrowdown:before {
   content: "\e65a";
 }
 
-.iconarrowright:before {
+.arrowright:before {
   content: "\e65b";
 }
 
-.icontogether:before {
+.together:before {
   content: "\e631";
 }
 
-.iconnotification2:before {
+.notification2:before {
   content: "\e652";
 }
-

@@ -7,16 +7,16 @@ Page({
   data: {
     head: {
       name: '我',
-      rightIcon: 'iconsetting'
+      rightIcon: 'setting'
     },
     grayHeight: 15,
     dataList: [
-      {icon: 'iconletter', name: '信件箱'},
-      { icon: 'iconfavorite', name: '收藏室'},
+      {icon: 'letter', name: '信件箱'},
+      { icon: 'favorite', name: '收藏室'},
     ],
     aboutList: [
-      {icon: 'iconemail', name: '提建议'},
-      {icon: 'iconabout', name: '关于我们'},
+      {icon: 'email', name: '提建议'},
+      {icon: 'about', name: '关于我们'},
 
     ],
     

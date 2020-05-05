@@ -12,18 +12,25 @@
         {{item.name}}
       </view>
     </scroll-view>
-    <view class="navIcon">
-      <icon class="iconfont iconmessage" size="23px" bindtap="post"></icon>
+    <view class="navIcon" bindtap="post">
+      <icon class="iconfont write"></icon>
     </view>
   </view>
-  <button class="btn" type="primary" loading="{{loading}}" disabled="{{disabled}}" bindtap="addSubType">
-    添加子类
-  </button>
+  <!-- <view class="adminBtnGroup" >
+    <view class="btn" loading="{{loading}}" disabled="{{disabled}}" bindtap="addType">
+      <icon class="iconfont add"></icon>
+      添加类型
+    </view>
+    <view class="btn" loading="{{loading}}" disabled="{{disabled}}" bindtap="addSubType">
+      <icon class="iconfont add"></icon>
+      添加子类
+    </view>
+  </view> -->
   <modal show="{{showModal}}" height='60%' bindconfirm='modalConfirm'>
     <text class="leftLabel">输入子类名称</text>
     <input maxlength="5" bindinput="saveSubTypeName" style="border-bottom: 1px solid #ccc " />
     <text class="leftLabel">选择颜色</text>
-    <input maxlength="5" bindinput="saveSubTypeColor" style="border-bottom: 1px solid #ccc " />
+    <input maxlength="6" bindinput="saveSubTypeColor" style="border-bottom: 1px solid #ccc " />
   </modal>
   <template wx:if="{{!smallTypeList.length}}" is="pageEmpty" />
   <view class="smallTypeList" wx:else current="{{currentSmallType}}">
@@ -34,14 +41,18 @@
       <view wx:for="{{dataList}}" wx:for-item="data" wx:for-index="dataIdx" wx:key="{{index}}" bindtap="toDetailPage" data-postItem="{{data}}">
         <view class="top">
           <view class="user">
-            <image class="userAvatar" type="userAvatarUrl" />
+            <!-- <image class="userAvatar" type="userAvatarUrl" /> -->
             <!-- <open-data class="avatar" type="userAvatarUrl"></open-data> -->
             <view class="userInfo">
-              <h1>{{data.name}}</h1>
-              <text class="dateText">{{data.release}}</text>
+              <h1>
+                {{data.name}}
+                <!-- color="{{!!data.gender ? 'green' : 'red'}}" -->
+                <icon class="iconfont {{!!data.gender ? 'male' : 'female'}}" style="color: {{!!data.gender ? '#006600': 'pink'}}"></icon>
+              </h1>
+              <text class="dateText">{{data.formatRelease}}</text>
             </view>
           </view>
-          <view class="more dateText">more</view>
+          <icon class="iconfont more  dateText"></icon>
         </view>
         <view class="content describeText">
           <text>{{data.content}}</text>
@@ -55,11 +66,11 @@
           <a class="activeText">{{data.typeName}}</a>
           <view class="dateText">
             <a>
-              <icon class="iconfont iconmessage"></icon>
+              <icon class="iconfont message"></icon>
               {{data.reply_num}}
             </a>
             <a data-postId="{{data._id}}" data-status="{{data.isLike}}" data-index="{{dataIdx}}" catchtap="zan">
-              <icon class="iconfont iconawesome" style="color: {{data.isLike ? '#006600': '#8d8d8d'}}"></icon>
+              <icon class="iconfont awesome" style="color: {{data.isLike ? '#006600': '#8d8d8d'}}"></icon>
               {{data.like_num}}
             </a>
           </view>

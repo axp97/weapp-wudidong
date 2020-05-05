@@ -7,7 +7,7 @@
       <icon class="iconfont {{item.icon}}  leftIcon"></icon>
       <view class="rightPane">
         {{item.name}}
-        <icon class="iconfont iconarrowright rightIcon"></icon>
+        <icon class="iconfont arrowright rightIcon"></icon>
       </view>
     </view>
   </view>

@@ -1,23 +1,40 @@
 <!-- pages/mine/mine.wxml -->
 <import src="../template/template.wxml" />
-<view class='swiper_header'>
-  <view wx:for="{{headerList}}" wx:for-index="idx" wx:key="idx" class="headerItem" style="width: {{100/headerList.length}}%;text-align: center;">
-    {{item}}
+<view class="minePage">
+  <view class="formItem">
+    <text class="leftLabel">评论昵称：</text>
+    <input value="{{userInfo.nickname}}" maxlength="6" bindinput="saveNickname" style="border-bottom: 1px solid #ccc " />
   </view>
-  <view class="weui-navbar-slider" style="transform:translateX({{slideOffset}}px);"></view>
+  <!-- 改成select -->
+  <view class="formItem">
+    <text class="leftLabel">性别：</text>
+    <input value="{{!!userInfo.gender ? '男' :'女'}}" maxlength="6" bindinput="saveGender" style="border-bottom: 1px solid #ccc " />
+  </view>
+  <view class="settingBtn" bindtap="setUser">
+    <icon class="iconfont setting"></icon>
+    设置
+  </view>
 </view>
-<swiper class='Allswipew' bindchange="changeline" current="{{activeIndex}}">
-  <swiper-item class="swipew">
-    1
-    <include src="./subpage/userConsole/userConsole.wxml" />
-  </swiper-item>
-  <swiper-item class="swipew">
-    2
-    <include src="./subpage/setting/setting.wxml" />
-  </swiper-item>
-  <swiper-item class="swipew">
-    3
-    <include src="./subpage/setting/setting.wxml" />
-  </swiper-item>
-</swiper>
+<!-- <view class="version2.0" wx:if="false">
+  <view class='swiper_header'>
+    <view wx:for="{{headerList}}" wx:for-index="idx" wx:key="idx" class="headerItem" style="width: {{100/headerList.length}}%;text-align: center;">
+      {{item}}
+    </view>
+    <view class="weui-navbar-slider" style="transform:translateX({{slideOffset}}px);"></view>
+  </view>
+  <swiper class='Allswipew' bindchange="changeline" current="{{activeIndex}}">
+    <swiper-item class="swipew">
+      1
+      <include src="./subpage/userConsole/userConsole.wxml" />
+    </swiper-item>
+    <swiper-item class="swipew">
+      2
+      <include src="./subpage/setting/setting.wxml" />
+    </swiper-item>
+    <swiper-item class="swipew">
+      3
+      <include src="./subpage/setting/setting.wxml" />
+    </swiper-item>
+  </swiper>
+</view> -->
 <customTabbar activeIndex='2'></customTabbar>

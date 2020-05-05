@@ -7,7 +7,7 @@
       </scroll-view>
       <view class='modal-btn-wrapper'>
          <view class='cancel-btn' style='color:rgba(7,17,27,0.6)' bindtap='cancel'>取消</view>
-         <view class='confirm-btn' style='color:#13b5f5' bindtap='confirm'>发布</view>
+         <view class='confirm-btn' style='color:#006600' bindtap='confirm'>发布</view>
       </view>
    </view>
 </view>

@@ -1,19 +1,16 @@
-<!--template.wxml-->
+<!-- template.wxml -->
 <template name="pageHead">
   <view class="pageHead">
     <text>{{name}}</text>
     <icon wx:if="{{rightIcon}}" class="iconfont {{rightIcon}}" bindtap="click" />
   </view>
 </template>
-
 <template name="pageEmpty">
   <view class="pageEmpty">
-    <icon class="iconfont iconempty" style="font-size: 8rem;"></icon>
+    <icon class="iconfont empty" style="font-size: 8rem;"></icon>
     还没有相关内容
   </view>
 </template>
-
 <template name="grayBlock">
-  <view class="grayBlock" style="height: {{grayHeight}}rpx">
-  </view>
+  <view class="grayBlock" style="height: {{grayHeight}}rpx"></view>
 </template>

@@ -1,4 +1,5 @@
 var dbJs = require("../../../../utils/db");
+const app = getApp();
 Page({
   data: {
     imgArr: [],
@@ -125,6 +126,7 @@ Page({
       release: new Date(),
       like_num: 0,
       reply_num: 0,
+      gender: app.globalData.userInfo.gender,
     };
     dbJs.add("square_data", param).then((res) => {
       this.backPage();
