@@ -1,3 +1,6 @@
+.postPage {
+  margin: 15rpx;
+}
 .textView {
   padding-bottom: 1rem;
 }
@@ -45,6 +48,7 @@
 .completeBtn {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 750rpx;
   /* background: var(--icon-color); */
 }

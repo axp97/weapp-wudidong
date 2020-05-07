@@ -1,30 +1,32 @@
 <import src="../../../template/template.wxml" />
-<view class="textView">
-  <textarea class='input describeText' bindinput='bindInput' placeholder='想说些什么...' value='{{content}}' auto-focus></textarea>
+<view class="postPage">
+  <view class="textView">
+    <textarea class='input describeText' bindinput='bindInput' placeholder='想说些什么...' value='{{content}}' auto-focus></textarea>
+  </view>
+  <view class='imgBox'>
+    <view class='img' wx:for='{{imgArr}}' wx:key="*this">
+      <image src='{{item}}' data-url="{{item}}" data-urls="{{imgArr}}" mode="aspectFill" catchtap="previewImg"></image>
+      <view class="deleteBtn" data-index="{{index}}" catchtap="deleteImg">删除</view>
+    </view>
+    <view class="uploadImgBtn" wx:if='{{imgArr.length < 3}}'>
+      <icon class="iconfont add" size="23px" bindtap="uploadImg"></icon>
+    </view>
+  </view>
+  <view class="completeBtn">
+    <!-- disabled="{{!content || !inputValue}}" -->
+    <button type="primary" bindtap="completeBtn" disabled="{{!content}}">完成</button>
+  </view>
+  <modal show="{{showModal}}" height='60%' bindconfirm='modalConfirm'>
+    <view class="pickerBox">
+      <text class="leftLabel">发布频道</text>
+      <picker class="picker" mode="selector" range="{{typeArr}}" range-key="name" value="{{index}}" bindchange="bindPickerChange">
+        {{typeArr[index].name}}
+        <icon type="iconfont arrowdown" />
+      </picker>
+    </view>
+    <view class="pickerBox">
+      <text class="leftLabel">取个名字</text>
+      <input maxlength="8" bindinput="bindKeyInput" />
+    </view>
+  </modal>
 </view>
-<view class='imgBox'>
-  <view class='img' wx:for='{{imgArr}}' wx:key="*this">
-    <image src='{{item}}' data-url="{{item}}" data-urls="{{imgArr}}" mode="aspectFill" catchtap="previewImg"></image>
-    <view class="deleteBtn" data-index="{{index}}" catchtap="deleteImg">删除</view>
-  </view>
-  <view class="uploadImgBtn" wx:if='{{imgArr.length < 3}}'>
-    <icon class="iconfont add" size="23px" bindtap="uploadImg"></icon>
-  </view>
-</view>
-<view class="completeBtn">
-  <!-- disabled="{{!content || !inputValue}}" -->
-  <button type="primary" bindtap="completeBtn" disabled="{{!content}}">完成</button>
-</view>
-<modal show="{{showModal}}" height='60%' bindconfirm='modalConfirm'>
-  <view class="pickerBox">
-    <text class="leftLabel">发布频道</text>
-    <picker class="picker" mode="selector" range="{{typeArr}}" range-key="name" value="{{index}}" bindchange="bindPickerChange">
-      {{typeArr[index].name}}
-      <icon type="iconfont arrowdown" />
-    </picker>
-  </view>
-  <view class="pickerBox">
-    <text class="leftLabel">取个名字</text>
-    <input maxlength="8" bindinput="bindKeyInput" />
-  </view>
-</modal>
