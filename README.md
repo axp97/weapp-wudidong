@@ -10,10 +10,8 @@
 
 - 对于小程序的 API 使用问题请查看[微信官方小程序文档](https://developers.weixin.qq.com/miniprogram/dev/framework/)。
 
-
-- 如果是对于树洞本身的一些 BUGs 或问题，请提 [issue](https://github.com/axp97/weapp-wudidong/issues)。
-
+* 如果是对于树洞本身的一些 BUGs 或问题，请提 [issue](https://github.com/axp97/weapp-wudidong/issues)。
 
 ## 项目图片
 
-![样式致敬蓝色海洋的一罐](/images/readme/cover.jpg)
+ <img src="images/readme/cover.jpg" height = "300" alt="样式致敬蓝色海洋的一罐"  />
